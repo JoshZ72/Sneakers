@@ -8,11 +8,6 @@ public class Motorcycle : MonoBehaviour
     public float turnSpeed;
     public Rigidbody2D rb;
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
-
     void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -28,8 +23,5 @@ public class Motorcycle : MonoBehaviour
 
         rb.AddForce(rb.GetRelativeVector(relativeForce));
         rb.rotation -= moveHorizontal * turnSpeed * rb.velocity.magnitude * 0.1f;
-
-        //Apply the drift force to the bike
-        rb.AddForce(transform.right * driftForce, ForceMode2D.Force);
     }
 }
