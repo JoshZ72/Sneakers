@@ -89,7 +89,6 @@ public class PlayerMovement : MonoBehaviour
         {
             if (other.CompareTag("Motorcycle"))
             {
-                //Store a reference to the bike so we can control it later
                 bike = other.GetComponent<Motorcycle>();
             }
         }
@@ -100,7 +99,6 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("You're off");
         if (other.CompareTag("Motorcycle"))
         {
-            //Remove reference to bike when player moves away from it
             bike = null;
         }
     }
