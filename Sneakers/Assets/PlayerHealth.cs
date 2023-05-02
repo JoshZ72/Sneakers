@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene("Endscene");
+            SceneManager.LoadScene("YouDied");
             Destroy(gameObject);
         }
 
