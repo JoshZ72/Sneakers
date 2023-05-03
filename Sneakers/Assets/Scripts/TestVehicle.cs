@@ -25,6 +25,7 @@ public class TestVehicle : MonoBehaviour
     //private float zRotationVelocity;
     private Vector3 accelerationV;
     private Vector3 accelerationH;
+    private float angle;
 
     void Start()
     {
@@ -82,17 +83,53 @@ public class TestVehicle : MonoBehaviour
         velocity = velocityV + velocityH;
         if ((velocity.y > 1f || velocity.y < -1f) && (velocity.y < 1f || velocity.y > -1f))
         {
-            velocity = (velocityV + velocityH) / 1.2f;
+            velocity = (velocityV + velocityH) / 1.3f;
         }
 
-        if (velocity.x > 0  && velocity.y == 0)
+        float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+
+
+        /*
+        if ((velocity.x > -3 && velocity.x < 3) && (velocity.y > -3 && velocity.y < 3))
         {
-            transform.rotation = Quaternion.Euler(Vector3.forward * 0);
+
         }
-        else if (velocity.x < 0 && velocity.y == 0)
+        else if (velocity.y > 1  && (velocity.x < 1 && velocity.x > -1))
         {
-            transform.rotation = Quaternion.Euler(Vector3.forward * 180);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
+        else if (velocity.y < 1 && (velocity.x < 1 && velocity.x > -1))
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 180);
+        }
+        else if (velocity.x < 1 && (velocity.y < 1 && velocity.y > -1))
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 90);
+        }
+        else if (velocity.x > 1 && (velocity.y < 1 && velocity.y > -1))
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 270);
+        }
+        else if (velocity.x > 1 && velocity.y > 1)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 315);
+        }
+        else if (velocity.x < 1 && velocity.y < 1)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 135);
+        }
+        else if (velocity.x > 1 && velocity.y < 1)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 225);
+        }
+        else if (velocity.x < 1 && velocity.y > 1)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 45);
+        }
+        */
+
+        //Debug.Log(velocity);
         // update transform
         transform.position += velocity * Time.deltaTime;
         //transform.Rotate(0, 0, zRotationVelocity * Time.deltaTime);
