@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
 
     private Animator animator;
 
-    //public Slider healthbar;
+    public Slider healthbar;
 
 
     void Start()
@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
     void Update()
     {
 
-        //healthbar.value = currentHealth;
+        healthbar.value = currentHealth;
 
         if (currentHealth <= 0)
         {
