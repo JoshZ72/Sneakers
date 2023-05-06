@@ -29,7 +29,7 @@ public class VehicleEnter : MonoBehaviour
                 if (leftExit.GetComponent<SideExit>().ReturnCanExit())
                 {
                     player.transform.position = leftExit.transform.position;
-                    vehicle.GetComponent<TestVehicle>().enabled = false;
+                    vehicle.GetComponent<VehicleInput>().enabled = false;
                     player.SetActive(true);
                     inVehicle = false;
                     coolDown = Time.time + .5f;
@@ -37,13 +37,11 @@ public class VehicleEnter : MonoBehaviour
                 else if (rightExit.GetComponent<SideExit>().ReturnCanExit())
                 {
                     player.transform.position = rightExit.transform.position;
-                    vehicle.GetComponent<TestVehicle>().enabled = false;
+                    vehicle.GetComponent<VehicleInput>().enabled = false;
                     player.SetActive(true);
                     inVehicle = false;
                     coolDown = Time.time + .5f;
                 }
-                Debug.Log(rightExit.GetComponent<SideExit>().ReturnCanExit());
-                Debug.Log(leftExit.GetComponent<SideExit>().ReturnCanExit());
             }
         }
     }
@@ -57,7 +55,7 @@ public class VehicleEnter : MonoBehaviour
                 if (Input.GetKey(KeyCode.E))
                 {
                     player.SetActive(false);
-                    vehicle.GetComponent<TestVehicle>().enabled = true;
+                    vehicle.GetComponent<VehicleInput>().enabled = true;
                     inVehicle = true;
                     coolDown = Time.time + .5f;
                 }
