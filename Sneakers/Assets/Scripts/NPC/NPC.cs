@@ -49,8 +49,9 @@ public class NPC : MonoBehaviour
 
     public void RemoveText()
     {
-        dialogueText.text = "";
         index = 0;
+        dialogueText.text = "";
+        
         dialoguePanel.SetActive(false);
     }
 
