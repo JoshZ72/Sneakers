@@ -8,6 +8,8 @@ public class VehicleEnter : MonoBehaviour
     public GameObject player;
     private bool inVehicle;
     private float coolDown;
+    private GameObject leftExit;
+    private GameObject rightExit;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +24,24 @@ public class VehicleEnter : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                player.transform.position = transform.position;
-                vehicle.GetComponent<TestVehicle>().enabled = false;
-                player.SetActive(true);
-                inVehicle = false;
-                coolDown = Time.time + 1f;
+                leftExit = vehicle.transform.GetChild(2).gameObject;
+                rightExit = vehicle.transform.GetChild(3).gameObject;
+                if (leftExit.GetComponent<SideExit>().ReturnCanExit())
+                {
+                    player.transform.position = leftExit.transform.position;
+                    vehicle.GetComponent<VehicleInput>().enabled = false;
+                    player.SetActive(true);
+                    inVehicle = false;
+                    coolDown = Time.time + .5f;
+                }
+                else if (rightExit.GetComponent<SideExit>().ReturnCanExit())
+                {
+                    player.transform.position = rightExit.transform.position;
+                    vehicle.GetComponent<VehicleInput>().enabled = false;
+                    player.SetActive(true);
+                    inVehicle = false;
+                    coolDown = Time.time + .5f;
+                }
             }
         }
     }
@@ -40,9 +55,9 @@ public class VehicleEnter : MonoBehaviour
                 if (Input.GetKey(KeyCode.E))
                 {
                     player.SetActive(false);
-                    vehicle.GetComponent<TestVehicle>().enabled = true;
+                    vehicle.GetComponent<VehicleInput>().enabled = true;
                     inVehicle = true;
-                    coolDown = Time.time + 1f;
+                    coolDown = Time.time + .5f;
                 }
             }
         }
