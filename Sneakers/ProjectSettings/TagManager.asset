@@ -24,10 +24,10 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - PBullet
+  - EBullet
+  - Player
+  - Enemy
   - 
   - 
   - 
