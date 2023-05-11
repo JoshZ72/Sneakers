@@ -12,13 +12,11 @@ public class NPC : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public string[] dialogue;
     private int index = 0;
+    public Quest quest;
+    public PlayerHealth player;
 
     public float wordSpeed;
     public bool playerIsClose;
-
-
-
-
 
     void Start()
     {
@@ -41,10 +39,12 @@ public class NPC : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyDown(KeyCode.Q) && dialoguePanel.activeInHierarchy)
+        else if (Input.GetKeyDown(KeyCode.Q) && dialoguePanel.activeInHierarchy)
         {
             RemoveText();
         }
+
+        
     }
 
     public void RemoveText()
@@ -74,8 +74,15 @@ public class NPC : MonoBehaviour
         }
         else
         {
+            if (quest != null)
+            {
+                quest.isActive = true;
+                player.quests = quest;
+            }
             RemoveText();
         }
+
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)

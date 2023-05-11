@@ -937,7 +937,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -56948277
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1430,6 +1430,7 @@ GameObject:
   - component: {fileID: 1200427377}
   - component: {fileID: 1200427376}
   - component: {fileID: 1200427375}
+  - component: {fileID: 1200427381}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1574,6 +1575,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1200427381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200427374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202771e0f021e0e40806817fb657fac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest:
+    isActive: 0
+    title: 
+    description: 
+    goal:
+      goalType: 0
+      target: 0
+      requiredAmount: 0
+      currentAmount: 0
 --- !u!1 &1357306663
 GameObject:
   m_ObjectHideFlags: 0
@@ -2068,6 +2090,16 @@ MonoBehaviour:
   dialogue:
   - Hello
   - please do this quest for me
+  quest:
+    isActive: 0
+    title: Kill Peeps
+    description: Kill some Peeps
+    goal:
+      goalType: 0
+      target: 0
+      requiredAmount: 1
+      currentAmount: 0
+  player: {fileID: 0}
   wordSpeed: 0.06
   playerIsClose: 0
 --- !u!1 &1826064884

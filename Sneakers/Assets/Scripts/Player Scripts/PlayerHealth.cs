@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth;
     private int currentHealth;
+    public Quest quests;
 
     private Animator animator;
 
@@ -16,7 +17,6 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-
     }
 
     // Update is called once per frame
@@ -28,16 +28,6 @@ public class PlayerHealth : MonoBehaviour
         {
             SceneManager.LoadScene("YouDied");
             Destroy(gameObject);
-        }
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            //SceneManager.LoadScene("BossFight");
-        }
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            //SceneManager.LoadScene("Level1");
         }
         if (Input.GetKeyDown(KeyCode.I))
         {
