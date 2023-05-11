@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
     public Transform spawnArea; 
     public float minSpawnTime = 1f; 
     public float maxSpawnTime = 20f; 
-    public int maxEnemies = 4; //Most enemies that can be active at a time
+    public int maxEnemies = 4; //Most enemies that can be active at a time (no clue if its working tho)
 
     private int currentEnemies = 0; 
 

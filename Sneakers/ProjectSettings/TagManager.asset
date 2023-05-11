@@ -43,8 +43,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
+  - name: Ground
+    uniqueID: 846559599
+    locked: 0
+  - name: Player/enemies
     uniqueID: 4238019019
+    locked: 0
+  - name: bikelayer
+    uniqueID: 637264365
+    locked: 0
+  - name: building
+    uniqueID: 4282029841
     locked: 0
   - name: UI
     uniqueID: 2906809469
