@@ -17,6 +17,7 @@ public class NPC : MonoBehaviour
 
     public float wordSpeed;
     public bool playerIsClose;
+    private bool hasTalkedTo;
 
     void Start()
     {
@@ -74,6 +75,11 @@ public class NPC : MonoBehaviour
         }
         else
         {
+            if (!hasTalkedTo)
+            {
+
+            }
+            hasTalkedTo = true;
             if (quest != null)
             {
                 quest.isActive = true;
