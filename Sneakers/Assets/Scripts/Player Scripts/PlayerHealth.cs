@@ -33,10 +33,6 @@ public class PlayerHealth : MonoBehaviour
         {
             //SceneManager.LoadScene("cRED");
         }
-        if (quests.goal.IsReached())
-        {
-            quests.Complete();
-        }
 
     }
 
