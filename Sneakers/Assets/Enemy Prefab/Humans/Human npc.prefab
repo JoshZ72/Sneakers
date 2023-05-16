@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 8520690954817987044}
   - component: {fileID: 8520690954817987042}
   - component: {fileID: 7074337489406786802}
-  - component: {fileID: 7074337489406786803}
+  - component: {fileID: 685132850886703457}
   m_Layer: 0
   m_Name: Human npc
   m_TagString: Untagged
@@ -537,6 +537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 25
+  happyCont: {fileID: 0}
   healthbar: {fileID: 8520690954337126796}
 --- !u!61 &7074337489406786802
 BoxCollider2D:
@@ -564,7 +565,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.44, y: 1.44}
   m_EdgeRadius: 0
---- !u!114 &7074337489406786803
+--- !u!114 &685132850886703457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -573,16 +574,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8520690954817987045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a385459b67785448b8d50ed96f3ee50, type: 3}
+  m_Script: {fileID: 11500000, guid: 161e093b1692de143b7ae3391862ba68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
-  dialogue:
-  - Those cyborgs sure are annoying
-  - Wanna do me a favor and maybe
-  - Build me an emp bomb
-  - Please
+  dialogue: []
   quest:
     isActive: 0
     title: 
@@ -590,10 +587,11 @@ MonoBehaviour:
     goal:
       goalType: 0
       target: 0
-      requiredAmount: 0
-      currentAmount: 0
+      requiredAmount: 50
+      currentAmount: 50
+    HappinessReward: 0
   player: {fileID: 0}
-  wordSpeed: 0.03
+  wordSpeed: 0
   playerIsClose: 0
 --- !u!1 &8520690955122969610
 GameObject:
