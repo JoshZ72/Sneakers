@@ -9,12 +9,14 @@ public class VehicleEnter : MonoBehaviour
     private bool inVehicle;
     private float coolDown;
     private GameObject leftExit;
+    private GameObject playerSprite;
     private GameObject rightExit;
     // Start is called before the first frame update
     void Start()
     {
         inVehicle = false;
         coolDown = Time.time;
+        playerSprite = vehicle.transform.GetChild(5).gameObject;
     }
 
     // Update is called once per frame
@@ -26,8 +28,10 @@ public class VehicleEnter : MonoBehaviour
             {
                 leftExit = vehicle.transform.GetChild(2).gameObject;
                 rightExit = vehicle.transform.GetChild(3).gameObject;
+                
                 if (leftExit.GetComponent<SideExit>().ReturnCanExit())
                 {
+                    playerSprite.SetActive(false);
                     player.transform.position = leftExit.transform.position;
                     vehicle.GetComponent<VehicleInput>().enabled = false;
                     player.SetActive(true);
@@ -36,6 +40,7 @@ public class VehicleEnter : MonoBehaviour
                 }
                 else if (rightExit.GetComponent<SideExit>().ReturnCanExit())
                 {
+                    playerSprite.SetActive(false);
                     player.transform.position = rightExit.transform.position;
                     vehicle.GetComponent<VehicleInput>().enabled = false;
                     player.SetActive(true);
@@ -54,6 +59,7 @@ public class VehicleEnter : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.E))
                 {
+                    playerSprite.SetActive(true);
                     player.SetActive(false);
                     vehicle.GetComponent<VehicleInput>().enabled = true;
                     inVehicle = true;
