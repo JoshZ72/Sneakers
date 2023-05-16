@@ -8,8 +8,11 @@ public class QuestGoal
     public GoalType goalType;
     public Target target;
 
-    public int requiredAmount;
-    public int currentAmount;
+    [Range (0, 100)]
+    public int requiredAmount = 50;
+
+    [Range (0, 100)]
+    public int currentAmount = 50;
 
     public bool IsReached()
     {

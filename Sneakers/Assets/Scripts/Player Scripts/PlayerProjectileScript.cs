@@ -18,8 +18,7 @@ public class PlayerProjectileScript : MonoBehaviour
 
     private void Update()
     {
-
-        transform.position += speed * transform.up * Time.deltaTime;
+        transform.position += speed * transform.up* Time.deltaTime;
     }
 
     void DestroyProjectile()
@@ -34,7 +33,6 @@ public class PlayerProjectileScript : MonoBehaviour
         {
             Health health = collision.gameObject.GetComponent<Health>();
             health.TakeDamage(damage);
-            //CancelInvoke("FollowPlayer");
             Destroy(gameObject);
         }
 
