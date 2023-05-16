@@ -8,8 +8,8 @@ using TMPro;
 
 public class NPC : MonoBehaviour
 {
-    public GameObject dialoguePanel;
-    public TextMeshProUGUI dialogueText;
+    //public GameObject dialoguePanel;
+    //public TextMeshProUGUI dialogueText;
     public string[] dialogue;
     private int index = 0;
     public Quest quest;
@@ -26,7 +26,7 @@ public class NPC : MonoBehaviour
 
     void Start()
     {
-        dialogueText.text = "";
+        //dialogueText.text = "";
         happiness = happyCont.GetComponent<HappyController>();
     }
 
@@ -34,10 +34,12 @@ public class NPC : MonoBehaviour
     void Update()
     {
         pDistance = Vector2.Distance(transform.position, player.transform.position);
+        /*
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
         {
 
             Debug.Log("Talk!");
+
             if (!dialoguePanel.activeInHierarchy)
             {
                 dialoguePanel.SetActive(true);
@@ -54,6 +56,7 @@ public class NPC : MonoBehaviour
             dialogueText.text = "";
             RemoveText();
         }
+        */
 
         if (pDistance < 10)
         {
@@ -74,6 +77,7 @@ public class NPC : MonoBehaviour
         }
     }
 
+    /*
     public void RemoveText()
     {
         index = 0;
@@ -111,6 +115,7 @@ public class NPC : MonoBehaviour
 
         
     }
+    */
 
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -126,7 +131,7 @@ public class NPC : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsClose = false;
-            RemoveText();
+            //RemoveText();
         }
     }
 

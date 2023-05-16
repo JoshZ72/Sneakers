@@ -493,9 +493,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 25
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 25
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -515,9 +515,9 @@ GameObject:
   - component: {fileID: 8049476152087989117}
   - component: {fileID: -6144486777833098736}
   - component: {fileID: 8049476152087989091}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Cyborg npc
-  m_TagString: Untagged
+  m_TagString: Cyborg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -579,7 +579,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -56948277
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: dc2d5f1d2924eba4f8da613bf39a1a7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -603,9 +603,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a6f78958e96a849ab6cca2a6b6900b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 25
-  happyCont: {fileID: 0}
-  healthbar: {fileID: 0}
+  maxHealth: 100
+  happyCont: {fileID: 7043032770339090111, guid: 2f9a6ff1efd20be4687c855c8f74e8b1, type: 3}
+  healthbar: {fileID: 8627677563679012357}
 --- !u!61 &8627677563965292369
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -704,7 +704,7 @@ MonoBehaviour:
       requiredAmount: 50
       currentAmount: 50
     HappinessReward: 0
-  player: {fileID: 0}
+  player: {fileID: 753563726069856972, guid: 49a740533d3160d459afe086f11a2585, type: 3}
   wordSpeed: 0
   playerIsClose: 0
 --- !u!114 &8049476152087989091
