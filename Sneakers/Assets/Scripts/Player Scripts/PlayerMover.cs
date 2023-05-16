@@ -39,11 +39,7 @@ public class PlayerMover : MonoBehaviour
             transform.position.y,
             transform.position.z - 10);
 
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex);
-        }
+        
 
 
         // apply forward input
