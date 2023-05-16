@@ -18,6 +18,15 @@ public class TestVehicle : MonoBehaviour
     private float inputVertical;
     private float inputHorizontal;
 
+    public GameObject playerOnBike;
+
+    private void Start()
+    {
+        
+        playerOnBike.SetActive(false);
+    }
+
+
     private void Update()
     {
         if (GetComponent<VehicleInput>().enabled == true)
@@ -31,6 +40,15 @@ public class TestVehicle : MonoBehaviour
             inputHorizontal = 0;
         }
 
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            playerOnBike.SetActive(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            playerOnBike.SetActive(false);
+        }
 
         //Debug.Log("Vert: " + inputVertical);
         //Debug.Log("Horiz: " + inputHorizontal);

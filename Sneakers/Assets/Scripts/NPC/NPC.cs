@@ -36,6 +36,8 @@ public class NPC : MonoBehaviour
         pDistance = Vector2.Distance(transform.position, player.transform.position);
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
         {
+
+            Debug.Log("Talk!");
             if (!dialoguePanel.activeInHierarchy)
             {
                 dialoguePanel.SetActive(true);
@@ -110,6 +112,7 @@ public class NPC : MonoBehaviour
         
     }
 
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -134,4 +137,5 @@ public class NPC : MonoBehaviour
             this.GetComponent<NPCCombat>().enabled = true;
         }
     }
+    
 }
