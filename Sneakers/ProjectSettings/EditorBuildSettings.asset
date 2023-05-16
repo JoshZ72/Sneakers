@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 125a90bbf88434e4bb6ffd1ab5cb8ee1
+  - enabled: 1
+    path: Assets/Scenes/TerminatorEnding.unity
+    guid: d03241de60e6d1a4fa57d53c9495edf0
+  - enabled: 1
+    path: Assets/Scenes/CyborgEnding.unity
+    guid: 0a74cfb29e1e70b48870b0f71f0d9e5f
+  - enabled: 1
+    path: Assets/Scenes/HumanEnding.unity
+    guid: 3be7bfbac6905f64291aa2716e8dde80
   m_configObjects: {}
