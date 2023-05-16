@@ -226,7 +226,6 @@ GameObject:
   - component: {fileID: 5760846777760944231}
   - component: {fileID: 6620336185233083767}
   - component: {fileID: 6620336185233083766}
-  - component: {fileID: 5877858037664620486}
   m_Layer: 0
   m_Name: Enemy human
   m_TagString: Untagged
@@ -248,7 +247,6 @@ Transform:
   m_Children:
   - {fileID: 5760846777372701990}
   - {fileID: 6620336186018018128}
-  - {fileID: 1822528505679996647}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -363,8 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a6f78958e96a849ab6cca2a6b6900b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  happyCont: {fileID: 0}
+  maxHealth: 25
   healthbar: {fileID: 5760846778350729225}
 --- !u!61 &6620336185233083767
 BoxCollider2D:
@@ -399,7 +396,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5760846777760944224}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a385459b67785448b8d50ed96f3ee50, type: 3}
   m_Name: 
@@ -420,28 +417,9 @@ MonoBehaviour:
       target: 0
       requiredAmount: 0
       currentAmount: 0
-    HappinessReward: 0
   player: {fileID: 0}
   wordSpeed: 0.03
   playerIsClose: 0
-  happyCont: {fileID: 0}
---- !u!114 &5877858037664620486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5760846777760944224}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8f0df73a123fa04db74104c043db044, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
-  rotationSpeed: 8
-  startTimeBtwAttack: 0.6
-  bulletPrefab: {fileID: 1870112719458533982, guid: 9f37c1731ffeec245bfdab1fae299c23, type: 3}
-  FiringPoint: {fileID: 1822528505679996647}
 --- !u!1 &5760846778129153423
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,9 +618,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 25
   m_WholeNumbers: 1
-  m_Value: 100
+  m_Value: 25
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -730,34 +708,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &7316424985790414097
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1822528505679996647}
-  m_Layer: 0
-  m_Name: ShootPont
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1822528505679996647
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7316424985790414097}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5760846777760944229}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
