@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1870112719458533980}
   - component: {fileID: 1870112719458533981}
   - component: {fileID: 5400283551292138557}
-  m_Layer: 17
-  m_Name: PlayerBullet
-  m_TagString: PBullet
+  m_Layer: 18
+  m_Name: EnemyBullet
+  m_TagString: EBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   lifeTime: 2
-  damage: 20
+  damage: 5
   destroyEffect: {fileID: 0}
 --- !u!70 &1870112719458533981
 CapsuleCollider2D:

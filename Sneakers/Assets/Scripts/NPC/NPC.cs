@@ -18,15 +18,22 @@ public class NPC : MonoBehaviour
     public float wordSpeed;
     public bool playerIsClose;
     private bool hasTalkedTo;
+    private float pDistance;
+
+    public GameObject happyCont;
+    private HappyController happiness;
+
 
     void Start()
     {
         dialogueText.text = "";
+        happiness = happyCont.GetComponent<HappyController>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        pDistance = Vector2.Distance(transform.position, player.transform.position);
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
         {
             if (!dialoguePanel.activeInHierarchy)
@@ -42,10 +49,27 @@ public class NPC : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Q) && dialoguePanel.activeInHierarchy)
         {
+            dialogueText.text = "";
             RemoveText();
         }
 
-        
+        if (pDistance < 10)
+        {
+            if (this.tag.Equals("Cyborg"))
+            {
+                if (happiness.GetHappiness() < 40)
+                {
+
+                }
+            }
+            else if(this.tag.Equals("Human"))
+            {
+                if (happiness.GetHappiness() > 60)
+                {
+                    this.GetComponent<NPCCombat>().enabled = true;
+                }
+            }
+        }
     }
 
     public void RemoveText()
@@ -80,11 +104,6 @@ public class NPC : MonoBehaviour
 
             }
             hasTalkedTo = true;
-            if (quest != null)
-            {
-                quest.isActive = true;
-                player.quests = quest;
-            }
             RemoveText();
         }
 
@@ -105,6 +124,14 @@ public class NPC : MonoBehaviour
         {
             playerIsClose = false;
             RemoveText();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag.Equals("PBullet"))
+        {
+            this.GetComponent<NPCCombat>().enabled = true;
         }
     }
 }

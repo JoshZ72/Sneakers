@@ -7,8 +7,6 @@ public class PlayerMover : MonoBehaviour
     //public int playerspeed = 5;
     public int rotationSpeed = 10;
 
-    
-
     public float verticalInputAcceleration = 1;
     public float horizontalInputAcceleration = 20;
 
@@ -64,7 +62,7 @@ public class PlayerMover : MonoBehaviour
         // Rotate the object to face the mouse cursor
         transform.up += direction.normalized * rotationSpeed * Time.deltaTime;
         */
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             if (toggleSprint)
             {

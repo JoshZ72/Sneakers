@@ -12,6 +12,8 @@ public class Quest
 
     public QuestGoal goal;
 
+    public int HappinessReward;
+
     public void Complete()
     {
         isActive = false;
