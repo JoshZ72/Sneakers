@@ -15,6 +15,9 @@ public class VehicleInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Camera.main.transform.position = new Vector3(transform.position.x,
+        transform.position.y,
+        transform.position.z - 10);
         vInput = Input.GetAxis("Vertical");
         hInput = Input.GetAxis("Horizontal");
     }
