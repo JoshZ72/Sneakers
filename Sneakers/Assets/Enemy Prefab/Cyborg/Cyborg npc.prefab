@@ -509,12 +509,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8627677563965292374}
   - component: {fileID: 8627677563965292373}
-  - component: {fileID: 8627677563965292368}
   - component: {fileID: 8627677563965292369}
   - component: {fileID: 8627677563965292370}
   - component: {fileID: 8049476152087989117}
-  - component: {fileID: 8049476152087989116}
   - component: {fileID: 8049476152087989091}
+  - component: {fileID: 7701745018413532762}
   m_Layer: 0
   m_Name: Cyborg npc
   m_TagString: Untagged
@@ -591,20 +590,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8627677563965292368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8627677563965292372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24a6f78958e96a849ab6cca2a6b6900b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 25
-  healthbar: {fileID: 0}
 --- !u!61 &8627677563965292369
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -678,35 +663,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.45, y: 1.45}
   m_EdgeRadius: 0
---- !u!114 &8049476152087989116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8627677563965292372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a385459b67785448b8d50ed96f3ee50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 0}
-  dialogueText: {fileID: 0}
-  dialogue:
-  - Hello
-  - Please do this quest for me
-  quest:
-    isActive: 0
-    title: 
-    description: 
-    goal:
-      goalType: 0
-      target: 0
-      requiredAmount: 0
-      currentAmount: 0
-  player: {fileID: 0}
-  wordSpeed: 0.03
-  playerIsClose: 0
 --- !u!114 &8049476152087989091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,3 +675,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8a2c6649df1974eb9928eb8aedc798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7701745018413532762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8627677563965292372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a14b0ea0875e5fb4e92bc09f711618c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguePanel: {fileID: 0}
+  dialogueText: {fileID: 0}
+  dialogue: []
+  quest:
+    isActive: 0
+    title: 
+    description: 
+    goal:
+      goalType: 0
+      target: 0
+      requiredAmount: 50
+      currentAmount: 50
+    HappinessReward: 0
+  player: {fileID: 0}
+  wordSpeed: 0
+  playerIsClose: 0
