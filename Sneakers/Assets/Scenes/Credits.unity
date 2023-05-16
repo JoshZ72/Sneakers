@@ -316,44 +316,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Creative Director:
-
-
-
-    Map Design:
-
-
-    Art Director:
-
-
-
-    Tile
-    Art:
-
-
-
-    Character Art:
-
-
-
-    Weapons Art:
-
-
-    Vehicle Art:
-
-
-    Narrartive:
-
-
-    Programmers:
-
-
-
-    UI
-    Art:
-
-
-    Music: '
+  m_text: "Creative Director:\n\n\nMap Design:\n\nArt Director:\n\n\nTile Art:\n\n\nCharacter
+    Art:\n\n\nWeapons Art:\n\nVehicle Art:\n\nNarrartive:\n\nProgrammers:\n\n\nUI
+    Art:\n\nMusic: \n\n\n\n\n\n\n\n\n\nUses:"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -416,7 +381,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -413.53265}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -626,11 +591,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Fred Guese\n\nSmai Nugwynne\n\n\nDominic Chavez, Diominic Chavez, and
-    Josh Zielinski \n\n\nSmai Nugwynne & Josh Zielinski\n\n\nJesus Casanova & Dominic
+  m_text: "Fred Guese\n\nSmai Nugwynne\n\n\nDominic Chavez, Dominic Chavez, and Josh
+    Zielinski \n\n\nSmai Nugwynne & Josh Zielinski\n\n\nJesus Casanova & Dominic
     Chavez \n\n\nJesus Casanova\n\nFred Guese\n\nSamuel Steffon, Josh Zielinski &\nFred
     Guese\nFred Guese\n\n'Tak' by Bobby Richards from The YouTube Sound Library\n'Blinding
-    Waves'  by ScanX from GITS (1996) by SIE JAPAN\n"
+    Waves'  by ScanX from GITS (1996) by SIE JAPAN\n'Creep' by Emmit Fenn from The
+    YouTube Sound Library\n\n\n\n\r\nRealistic Glitches Lite\nBy SF-Productions\nUnity
+    Free Asset\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -693,7 +660,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: -88.89331}
+  m_margin: {x: 0, y: 0, z: 0, w: -491.2188}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1131,6 +1098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1310002552}
   - component: {fileID: 1310002551}
+  - component: {fileID: 1310002553}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -1149,7 +1117,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4230b7bdd89ca304e94a48f7a11b745a, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -1249,6 +1217,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1310002553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310002550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b743e3db88843eb438332cb9f51bc315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSource: {fileID: 1310002551}
+  musicStart: {fileID: 8300000, guid: 4230b7bdd89ca304e94a48f7a11b745a, type: 3}
 --- !u!1 &1607215013
 GameObject:
   m_ObjectHideFlags: 0
