@@ -31,9 +31,13 @@ public class TestVehicle : MonoBehaviour
             inputHorizontal = 0;
         }
 
+
         //Debug.Log("Vert: " + inputVertical);
         //Debug.Log("Horiz: " + inputHorizontal);
 
+        Camera.main.transform.position = new Vector3(transform.position.x,
+            transform.position.y,
+            transform.position.z - 10);
         // apply forward input
         Vector3 acceleration = inputVertical * verticalInputAcceleration * transform.up;
         velocity += acceleration * Time.deltaTime;
