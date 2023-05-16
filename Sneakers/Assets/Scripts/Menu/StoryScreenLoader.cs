@@ -10,7 +10,7 @@ public class StoryScreenLoader : MonoBehaviour
     {
 
         //Load next scrreen
-        SceneManager.LoadScene("Sam Scene", LoadSceneMode.Single);
+        SceneManager.LoadScene("CityScene", LoadSceneMode.Single);
         
     }
 

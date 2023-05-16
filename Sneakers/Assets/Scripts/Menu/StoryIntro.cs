@@ -9,8 +9,8 @@ public class StoryIntro : MonoBehaviour
 
     public void GameStart()
     {
-        Debug.Log("Sam Scene");
-        SceneManager.LoadScene("Sam Scene");
+        Debug.Log("CITY");
+        SceneManager.LoadScene("CityScene");
 
     }
 
