@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Motorcycle
   - Vehicle
+  - Human
+  - Cyborg
+  - PBullet
+  - EBullet
   layers:
   - Default
   - TransparentFX

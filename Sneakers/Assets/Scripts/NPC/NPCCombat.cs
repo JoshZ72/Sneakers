@@ -76,7 +76,10 @@ public class NPCCombat : MonoBehaviour
                 canShoot = false;
             }
         }
-
+        else if (pDistance > 11)
+        {
+            this.GetComponent<NPCCombat>().enabled = false;
+        }
     }
 
     private void FixedUpdate()

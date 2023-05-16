@@ -8,6 +8,8 @@ public class Health : MonoBehaviour
 {
     public int maxHealth;
     private int currentHealth;
+    public GameObject happyCont;
+    private HappyController happiness;
 
     private Animator animator;
 
@@ -17,6 +19,7 @@ public class Health : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        happiness = happyCont.GetComponent<HappyController>();
     }
 
 
@@ -27,6 +30,14 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            if (this.tag.Equals("Cyborg"))
+            {
+                happiness.AddHumanHappiness(5);
+            }
+            else if (this.tag.Equals("Human"))
+            {
+                happiness.AddCyborgHappiness(5);
+            }
             //SceneManager.LoadScene("Endscene");
             Destroy(gameObject);
         }

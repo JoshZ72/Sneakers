@@ -5,36 +5,20 @@ using UnityEngine;
 [System.Serializable]
 public class HappyLevels
 {
-    public int CyborgHappiness;
-    public int HumanHappiness;
+    public int Happiness = 50;
 
     public void AddCyborgHappiness(int amount)
     {
-        CyborgHappiness += amount;
+        Happiness -= amount;
     }
 
     public void AddHumanHappiness(int amount)
     {
-        HumanHappiness += amount;
+        Happiness += amount;
     }
 
-    public void RemoveCyborgHappiness(int amount)
+    public int GetHappiness()
     {
-        CyborgHappiness -= amount;
-    }
-
-    public void RemoveHumanHappiness(int amount)
-    {
-        HumanHappiness -= amount;
-    }
-
-    public int GetCyborgHappiness()
-    {
-        return CyborgHappiness;
-    }
-
-    public int GetHumanHappiness()
-    {
-        return HumanHappiness;
+        return Happiness;
     }
 }
