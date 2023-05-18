@@ -7,11 +7,14 @@ public class HappyController : MonoBehaviour
 {
     public HappyLevels happyLevels;
     public Slider happyBar;
+    private bool cyborgIsMad;
+    private bool humanIsMad;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        cyborgIsMad = false;
+        humanIsMad = false;
     }
 
     // Update is called once per frame
@@ -33,5 +36,25 @@ public class HappyController : MonoBehaviour
     public int GetHappiness()
     {
         return happyLevels.GetHappiness();
+    }
+
+    public void changeCyborgIsMad(bool newBool)
+    {
+        cyborgIsMad = newBool;
+    }
+    
+    public void changeHumanIsMad(bool newBool)
+    {
+        humanIsMad = newBool;
+    }
+
+    public bool GetCyborgIsMad()
+    {
+        return cyborgIsMad;
+    }
+
+    public bool GetHumanIsMad()
+    {
+        return humanIsMad;
     }
 }

@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
     private HappyController happiness;
 
     private Animator animator;
-
+    public GameObject head;
     public Slider healthbar;
 
 
@@ -37,21 +37,14 @@ public class Health : MonoBehaviour
             else if (this.tag.Equals("Human"))
             {
                 happiness.AddCyborgHappiness(5);
+                if (gameObject.GetComponent<HumanQuest>() != null)
+                {
+                    head.SetActive(true);
+                }
             }
-            //SceneManager.LoadScene("Endscene");
             Destroy(gameObject);
         }
 
-        /*
-        if (Input.GetKey(KeyCode.P))
-        {
-            SceneManager.LoadScene("Jungle");
-        }
-        if (Input.GetKey(KeyCode.O))
-        {
-            SceneManager.LoadScene("Temple");
-        }
-        */
     }
 
     public int GetHealth()

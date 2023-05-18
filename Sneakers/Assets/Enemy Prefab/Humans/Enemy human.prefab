@@ -397,6 +397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   happyCont: {fileID: 7043032770339090111, guid: 2f9a6ff1efd20be4687c855c8f74e8b1, type: 3}
+  head: {fileID: 0}
   healthbar: {fileID: 5760846778350729225}
 --- !u!61 &6620336185233083767
 BoxCollider2D:
@@ -472,6 +473,7 @@ MonoBehaviour:
   startTimeBtwAttack: 0.6
   bulletPrefab: {fileID: 1870112719458533982, guid: 9f37c1731ffeec245bfdab1fae299c23, type: 3}
   FiringPoint: {fileID: 5370289907279289797}
+  happyCont: {fileID: 7043032770339090111, guid: 2f9a6ff1efd20be4687c855c8f74e8b1, type: 3}
 --- !u!114 &7648982900103118053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,7 +716,7 @@ Transform:
   m_GameObject: {fileID: 6620336186018018131}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.03, y: -0.08, z: 0}
-  m_LocalScale: {x: 3.139, y: 3.139, z: 3.139}
+  m_LocalScale: {x: 4, y: 4, z: 3.139}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5760846777760944229}

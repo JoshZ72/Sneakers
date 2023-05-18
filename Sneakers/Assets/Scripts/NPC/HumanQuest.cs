@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 
@@ -12,7 +13,6 @@ public class HumanQuest : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public string[] dialogue;
     private int index = 0;
-    public Quest quest;
     public PlayerHealth player;
 
     public float wordSpeed;
@@ -29,7 +29,11 @@ public class HumanQuest : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
         {
-            if (!dialoguePanel.activeInHierarchy)
+            if (player.keyItems >= 3)
+            {
+                SceneManager.LoadScene("HumanEnding");
+            }
+            else if (!dialoguePanel.activeInHierarchy)
             {
                 dialoguePanel.SetActive(true);
                 StartCoroutine(Typing());
@@ -75,16 +79,6 @@ public class HumanQuest : MonoBehaviour
         }
         else
         {
-            if (!hasTalkedTo)
-            {
-
-            }
-            hasTalkedTo = true;
-            if (quest != null)
-            {
-                quest.isActive = true;
-                player.quests = quest;
-            }
             RemoveText();
         }
 

@@ -5,7 +5,12 @@ using UnityEngine;
 [System.Serializable]
 public class HappyLevels
 {
-    public int Happiness = 50;
+    public int Happiness;
+
+    void Start()
+    {
+        Happiness = 50;
+    }
 
     public void AddCyborgHappiness(int amount)
     {

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 7074337490230756054}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.03, y: -0.08, z: 0}
-  m_LocalScale: {x: 3.139, y: 3.139, z: 3.139}
+  m_LocalScale: {x: 4, y: 4, z: 3.139}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8520690954817987040}
@@ -539,6 +539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   happyCont: {fileID: 7043032770339090111, guid: 2f9a6ff1efd20be4687c855c8f74e8b1, type: 3}
+  head: {fileID: 8106943003957078966, guid: 6d939a24b9e42744ea87d8374063a073, type: 3}
   healthbar: {fileID: 8520690954337126796}
 --- !u!61 &7074337489406786802
 BoxCollider2D:
@@ -581,16 +582,6 @@ MonoBehaviour:
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   dialogue: []
-  quest:
-    isActive: 0
-    title: 
-    description: 
-    goal:
-      goalType: 0
-      target: 0
-      requiredAmount: 50
-      currentAmount: 50
-    HappinessReward: 0
   player: {fileID: 753563726069856972, guid: 49a740533d3160d459afe086f11a2585, type: 3}
   wordSpeed: 0
   playerIsClose: 0

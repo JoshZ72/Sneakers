@@ -13,9 +13,14 @@ public class PlayerHealth : MonoBehaviour
     private Animator animator;
 
     public Slider healthbar;
+    
+    public bool hasHead;
+
+    public int keyItems;
 
     void Start()
     {
+        keyItems = 0;
         currentHealth = maxHealth;
     }
 
@@ -29,11 +34,6 @@ public class PlayerHealth : MonoBehaviour
             SceneManager.LoadScene("YouDied");
             Destroy(gameObject);
         }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            //SceneManager.LoadScene("cRED");
-        }
-
     }
 
     public int GetHealth()
@@ -46,5 +46,8 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
     }
 
-
+    public void AddKeyItem()
+    {
+        keyItems++;
+    }
 }

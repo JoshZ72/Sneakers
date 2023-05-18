@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 
@@ -12,24 +13,30 @@ public class CyborgQuest : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public string[] dialogue;
     private int index = 0;
-    public Quest quest;
-    public PlayerHealth player;
+    public GameObject player;
 
     public float wordSpeed;
     public bool playerIsClose;
     private bool hasTalkedTo;
+    
 
     void Start()
     {
         dialogueText.text = "";
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        PlayerHealth health = player.GetComponent<PlayerHealth>();
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
-        {
-            if (!dialoguePanel.activeInHierarchy)
+        {        
+            if (health.hasHead)
+            {
+                SceneManager.LoadScene("TerminatorEnding");
+            }
+            else if (!dialoguePanel.activeInHierarchy)
             {
                 dialoguePanel.SetActive(true);
                 StartCoroutine(Typing());
@@ -75,20 +82,8 @@ public class CyborgQuest : MonoBehaviour
         }
         else
         {
-            if (!hasTalkedTo)
-            {
-
-            }
             hasTalkedTo = true;
-            if (quest != null)
-            {
-                quest.isActive = true;
-                player.quests = quest;
-            }
-            RemoveText();
         }
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)

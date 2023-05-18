@@ -23,7 +23,6 @@ public class NPC : MonoBehaviour
     public GameObject happyCont;
     private HappyController happiness;
 
-
     void Start()
     {
         //dialogueText.text = "";
@@ -58,18 +57,26 @@ public class NPC : MonoBehaviour
         }
         */
 
-        if (pDistance < 10)
+        if (pDistance < 20)
         {
             if (this.tag.Equals("Cyborg"))
             {
-                if (happiness.GetHappiness() < 40)
+                if (happiness.GetHappiness() < 40 || happiness.GetCyborgIsMad() == true)
                 {
-
+                    this.GetComponent<NPCCombat>().enabled = true;
+                }
+                else if (happiness.GetCyborgIsMad())
+                {
+                    this.GetComponent<NPCCombat>().enabled = true;
                 }
             }
             else if(this.tag.Equals("Human"))
             {
-                if (happiness.GetHappiness() > 60)
+                if (happiness.GetHappiness() > 60 || happiness.GetHumanIsMad() == true)
+                {
+                    this.GetComponent<NPCCombat>().enabled = true;
+                }
+                else if (happiness.GetHumanIsMad())
                 {
                     this.GetComponent<NPCCombat>().enabled = true;
                 }
@@ -116,7 +123,6 @@ public class NPC : MonoBehaviour
         
     }
     */
-
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -140,6 +146,14 @@ public class NPC : MonoBehaviour
         if (col.gameObject.tag.Equals("PBullet"))
         {
             this.GetComponent<NPCCombat>().enabled = true;
+            if (this.tag.Equals("Cyborg"))
+            {
+                happiness.changeCyborgIsMad(true);
+            }
+            else if(this.tag.Equals("Human"))
+            {
+                happiness.changeHumanIsMad(true);
+            }
         }
     }
     

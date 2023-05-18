@@ -16,6 +16,8 @@ public class NPCCombat : MonoBehaviour
     [SerializeField] private Transform FiringPoint;
     private bool canShoot;
     private float angle;
+    public GameObject happyCont;
+    private HappyController happiness;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class NPCCombat : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         rb = this.GetComponent<Rigidbody2D>();
         canShoot = true;
+        happiness = happyCont.GetComponent<HappyController>();
     }
 
     // Update is called once per frame
@@ -52,7 +55,7 @@ public class NPCCombat : MonoBehaviour
         {
             timeBtwAttack -= Time.deltaTime;
         }
-        if (pDistance < 4)
+        if (pDistance < 10)
         {
             Quaternion pRotate = Quaternion.Euler((Vector3.forward * (angle - 90)));
             transform.rotation = Quaternion.RotateTowards(transform.rotation, pRotate, (rotationSpeed * 10) * Time.deltaTime);
@@ -63,7 +66,7 @@ public class NPCCombat : MonoBehaviour
                 canShoot = false;
             }
         }
-        else if (pDistance < 10)
+        else if (pDistance < 20)
         {
 
             Quaternion pRotate = Quaternion.Euler((Vector3.forward * (angle - 90)));
@@ -76,8 +79,16 @@ public class NPCCombat : MonoBehaviour
                 canShoot = false;
             }
         }
-        else if (pDistance > 11)
+        else if (pDistance > 22)
         {
+            if (this.tag.Equals("Cyborg"))
+            {
+                happiness.changeCyborgIsMad(false);
+            }
+            else if (this.tag.Equals("Human"))
+            {
+                happiness.changeHumanIsMad(false);
+            }
             this.GetComponent<NPCCombat>().enabled = false;
         }
     }
